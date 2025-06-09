@@ -1,0 +1,74 @@
+-- ================================
+-- INSERÇÕES DE DADOS
+-- ================================
+
+-- Categorias
+INSERT INTO categoria (nome, descricao) VALUES
+('Calçados', 'Calçados em geral'),
+('Tênis', 'Tênis de diversas marcas'),
+('Acessórios', 'Óculos, bonés e mais');
+
+-- Usuários
+INSERT INTO usuario (nome, senha, email, endereco) VALUES
+('João Silva', 'senha123', 'joao@example.com', 'Rua das Flores, 123'),
+('Maria Oliveira', 'senha456', 'maria@example.com', 'Av. Brasil, 456'),
+('Carlos Lima', 'senha789', 'carlos@example.com', 'Rua Central, 789'),
+('Ana Souza', 'segura123', 'ana@example.com', 'Rua das Acácias, 321'),
+('Pedro Costa', 'minhasenha', 'pedro@example.com', 'Av. Paulista, 1000');
+
+-- Produtos
+INSERT INTO produto (marca, sexo, tamanho, preco, quantidade_estoque, categoria_id) VALUES
+('Nike', 'Masculino', '40', 149.90, 10, 1),
+('Adidas', 'Feminino', '36', 129.99, 5, 1),
+('Puma', 'Unissex', '42', 199.50, 8, 1),
+('Under Armour', 'Masculino', '43', 179.90, 12, 1),
+('Reebok', 'Feminino', '38', 119.90, 6, 1),
+('Fila', 'Unissex', '44', 139.90, 4, 1),
+('Vans', 'Masculino', '42', 299.99, 7, 2),
+('Nike', 'Feminino', '38', 349.99, 9, 2),
+('Adidas', 'Unissex', '40', 319.90, 5, 2),
+('New Balance', 'Masculino', '41', 279.90, 6, 2),
+('Asics', 'Feminino', '37', 289.90, 8, 2),
+('Converse', 'Unissex', '39', 199.99, 10, 2),
+('Ray-Ban', 'Unissex', 'U', 399.90, 2, 3),
+('Oakley', 'Masculino', 'U', 359.90, 3, 3),
+('Guess', 'Feminino', 'U', 249.90, 4, 3),
+('Tommy Hilfiger', 'Unissex', 'U', 299.99, 6, 3),
+('Nike', 'Masculino', '44', 159.90, 5, 1),
+('Adidas', 'Feminino', '39', 139.90, 6, 1),
+('Puma', 'Masculino', '36', 149.90, 7, 1),
+('Vans', 'Unissex', '42', 169.90, 8, 1),
+('Reebok', 'Masculino', '40', 129.90, 5, 1),
+('Fila', 'Feminino', '36', 119.90, 4, 1),
+('New Balance', 'Unissex', '43', 139.90, 3, 1),
+('Oakley', 'Masculino', '41', 309.90, 2, 2),
+('Tommy Hilfiger', 'Feminino', '39', 269.90, 3, 3);
+
+-- Pedidos
+INSERT INTO pedido (usuario_id, status) VALUES
+(1, 'Em processamento'),
+(2, 'Enviado'),
+(3, 'Entregue'),
+(1, 'Cancelado'),
+(4, 'Entregue'),
+(5, 'Em processamento'),
+(2, 'Em processamento'),
+(3, 'Enviado');
+
+-- Itens do pedido
+INSERT INTO item_pedido (pedido_id, produto_id, quantidade, preco_unitario) VALUES
+(1, 1, 2, 149.90),
+(1, 7, 1, 299.99),
+(2, 2, 1, 129.99),
+(2, 8, 1, 349.99),
+(3, 3, 1, 199.50),
+(3, 13, 1, 399.90),
+(4, 5, 2, 119.90),
+(5, 4, 1, 179.90),
+(5, 9, 1, 319.90),
+(6, 6, 2, 139.90),
+(6, 14, 1, 359.90),
+(7, 11, 1, 289.90),
+(7, 10, 1, 279.90),
+(8, 18, 1, 139.90),
+(8, 24, 1, 309.90);
