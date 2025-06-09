@@ -1,8 +1,5 @@
--- ================================
--- INSERÇÕES DE DADOS
--- ================================
-
 -- Categorias
+
 INSERT INTO categoria (nome, descricao) VALUES
 ('Calçados', 'Calçados em geral'),
 ('Tênis', 'Tênis de diversas marcas'),
@@ -10,11 +7,16 @@ INSERT INTO categoria (nome, descricao) VALUES
 
 -- Usuários
 INSERT INTO usuario (nome, senha, email, endereco) VALUES
-('João Silva', 'senha123', 'joao@example.com', 'Rua das Flores, 123'),
-('Maria Oliveira', 'senha456', 'maria@example.com', 'Av. Brasil, 456'),
-('Carlos Lima', 'senha789', 'carlos@example.com', 'Rua Central, 789'),
-('Ana Souza', 'segura123', 'ana@example.com', 'Rua das Acácias, 321'),
-('Pedro Costa', 'minhasenha', 'pedro@example.com', 'Av. Paulista, 1000');
+('Ana Costa', 'ana321', 'ana.costa@email.com', 'Rua das Flores, 101'),
+('Bruno Lima', 'bruno654', 'bruno.lima@email.com', 'Av. Central, 202'),
+('Fernanda Rocha', 'fern789', 'fernanda.rocha@email.com', 'Rua do Sol, 303'),
+('Lucas Martins', 'lucas987', 'lucas.martins@email.com', 'Av. Paulista, 404'),
+('Patrícia Mendes', 'patri123', 'patricia.mendes@email.com', 'Rua Verde, 505'),
+('Diego Fernandes', 'dieg456', 'diego.fernandes@email.com', 'Rua Azul, 606'),
+('Juliana Pires', 'juli789', 'juliana.pires@email.com', 'Rua do Comércio, 707'),
+('Rafael Nogueira', 'rafa987', 'rafael.nogueira@email.com', 'Av. dos Andradas, 808'),
+('Camila Ribeiro', 'cami654', 'camila.ribeiro@email.com', 'Rua das Palmeiras, 909'),
+('Thiago Alves', 'thi321', 'thiago.alves@email.com', 'Av. Brasil, 1001');
 
 -- Produtos
 INSERT INTO produto (marca, sexo, tamanho, preco, quantidade_estoque, categoria_id) VALUES
@@ -72,3 +74,13 @@ INSERT INTO item_pedido (pedido_id, produto_id, quantidade, preco_unitario) VALU
 (7, 10, 1, 279.90),
 (8, 18, 1, 139.90),
 (8, 24, 1, 309.90);
+
+-- Atualizando o status do pedido 1 para 'Enviado'
+UPDATE pedido
+SET status = 'Enviado'
+WHERE id = 1;
+
+-- Removendo o item do pedido 5 referente ao produto 9
+DELETE FROM item_pedido
+WHERE pedido_id = 5 AND produto_id = 9;
+
