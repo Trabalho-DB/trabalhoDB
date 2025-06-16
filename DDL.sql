@@ -18,7 +18,7 @@ CREATE TABLE produto (
     marca VARCHAR(50) NOT NULL,
     sexo VARCHAR(10) NOT NULL,
     tamanho VARCHAR(2) NOT NULL,
-    preco DECIMAL(6,2) NOT NULL,  -- Aumentado para permitir valores > 99.99
+    preco DECIMAL(6,2) NOT NULL, 
     quantidade_estoque INTEGER NOT NULL DEFAULT 0,
     categoria_id INTEGER NOT NULL,
     FOREIGN KEY (categoria_id) REFERENCES categoria(id)
@@ -27,7 +27,7 @@ CREATE TABLE produto (
 CREATE TABLE pedido (
     id SERIAL PRIMARY KEY,
     usuario_id INTEGER NOT NULL,
-    data TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,  -- Melhor tipo para datas
+    data TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,  
     status VARCHAR(20) NOT NULL,
     FOREIGN KEY (usuario_id) REFERENCES usuario(id) ON DELETE CASCADE
 );
